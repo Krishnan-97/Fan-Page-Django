@@ -1,0 +1,39 @@
+body{
+    background-image: url("images/img.jpg");
+    color: beige;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.container{
+    margin-top: 200px;
+    margin-left: 50px;
+    padding: .8em;
+    text-align: left;
+}
+input[type=text], input[type=password]{
+    width: 20%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+.registerbtn{
+    background-color: #4CAF50;
+    color:white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 15%;
+    opacity: 0.9;
+}
+a{
+    color: burlywood;
+}
+.name{
+    margin-left: 25px;
+}
+.pas{
+    margin-left: 0.1px;
+}

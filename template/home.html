@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/home.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body >
+        <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Yid Forever</a>
+                  </div>
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="http://127.0.0.1:8000/">Home</a></li>
+                    <li class="active"><a href="http://127.0.0.1:8000/k1/comment">Comments</a></li>
+                    <li class="active"><a href="http://127.0.0.1:8000/k1/addcomment">Add Comment</a></li>
+                    <li class="active"><a href="http://127.0.0.1:8000/k1/login/">Login</a></li>
+                  </ul>
+                </div>
+        </nav>
+        <div>
+            {%if user.is_authenticated%}
+            <h4>Hi,{{user.username}}!!!Welcome<a href="{%url 'logout' %}">Logout</a></h4>
+
+            {%endif%}
+        </div>
+        <div class="carousel">
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel" data-slide-to="1"></li>
+                  <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+              
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox" style="width:100%; max-height:500px !important;">
+                  <div class="item active">
+                    <img src="https://cdn.footballtransfertavern.com/wp-content/uploads/2018/12/2018-09-18T181331Z_986540670_RC1B969F6130_RTRMADP_3_SOCCER-CHAMPIONS-INT-TOT.jpg" alt="Vorm">
+                    <div class="carousel-caption" style="width:100%; max-height:500px !important;">
+                      <h3>Vorm returns</h3>
+                      <p>Vorm re-signs following LLoris injury</p>
+                    </div>
+                  </div>
+              
+                  <div class="item">
+                    <img src="https://www.foxsportsasia.com/uploads/2018/10/delealli-cropped_m6di1k1jwleu1rzstdltwglef.jpg" alt="Alli">
+                    <div class="carousel-caption" style="width:100%; max-height:500px !important;">
+                      <h3>Alli vows</h3>
+                      <p>Alli vows to get back to best</p>
+                    </div>
+                  </div>
+              
+                  <div class="item">
+                    <img src="https://www.worldbiographynews.com/wp-content/uploads/2018/05/Harry-Kane-Biography-Facts-Career-Family-Girlfriend-Net-Worth-More.jpg" alt="Kane">
+                    <div class="carousel-caption" style="width:100%; max-height:500px !important;">
+                      <h3>Kane Shines</h3>
+                      <p>Kane shines against Bulgaria</p>
+                    </div>
+                  </div>
+                </div>
+              
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+            <div style="margin-left: 20px;color:white;margin-right: 20px; background-image: url(https://populous.com/wp-content/uploads/2018/01/tottenham-hotspur-stadium-launch-1.jpg);">
+            <h1>Top Sorers:</h1>
+            
+
+            <div class="media">
+              <div class="media-left">
+                <img src="https://www.worldbiographynews.com/wp-content/uploads/2018/05/Harry-Kane-Biography-Facts-Career-Family-Girlfriend-Net-Worth-More.jpg" class="media-object" style="width:150px">
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Harry Kane:</h4>
+                <p>7 goals</p>
+              </div>
+            </div>
+
+            <div class="media">
+              <div class="media-left">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Team_Korea_Russia_WorldCup_02_%28cropped%29.png" class="media-object" style="width:100px ">
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Son Heung-Min:</h4>
+                <p>3 goals</p>
+              </div>
+            </div>
+
+            <div class="media">
+              <div class="media-left">
+                <img src="data:image/jpeg;base64,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" class="media-object" style="width:100px">
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Erik Lamela:</h4>
+                <p>2 goals</p>
+              </div>
+            </div>
+            <h1>Top Assists:</h1>
+
+            <div class="media">
+              <div class="media-left">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Team_Korea_Russia_WorldCup_02_%28cropped%29.png" class="media-object" style="width:100px ">
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Son Heung-Min:</h4>
+                <p>2 assists</p>
+              </div>
+            </div>
+
+            <div class="media">
+              <div class="media-left">
+                <img src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/01/18/17/Moussa-Sissoko.jpg?w968h681" class="media-object" style="width:100px ">
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Moussa Sissoko:</h4>
+                <p>2 assists</p>
+              </div>
+            </div>
+            </div>
+<div style="width: 100%"><iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=thrissur+(Your%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.mapsdirections.info/en/journey-planner.htm">find directions</a></iframe></div><br />
+
+
+            <div style="text-align: center; margin-top: 20px; background-color: lavenderblush;" >
+            <p class="text-muted">This is the official fan page of Tottenham Hotspur <br>
+            For more information regarding membership <a href="#">click here</a></p>
+          </div>
+
+        
+</body>
+</html>

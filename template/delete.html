@@ -1,0 +1,16 @@
+{%block title%}Delete Todo{%endblock%}
+
+{%block content%}
+
+<form method="post">
+{%csrf_token%}
+
+<h1 align="center">Are you sure ?</h1>
+
+<p align="center">Are you sure you want to delete </p>
+<input style="margin-left:580px;     color: #f91010;" type="submit" name="tododelete" value="YES, i'm sure ">
+<a href="http://127.0.0.1:8000/k1/comment/">No, take me back</a>
+
+</form>
+
+{%endblock%}

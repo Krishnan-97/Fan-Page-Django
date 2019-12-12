@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+{% block content %}
+<body style="background-color: darkgrey;">
+<nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Yid Forever</a>
+                  </div>
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="http://127.0.0.1:8000/">Home</a></li>
+                    <li class="active"><a href="http://127.0.0.1:8000/k1/comment">Comments</a></li>
+                    <li class="active"><a href="http://127.0.0.1:8000/k1/addcomment">Add Comment</a></li>
+                    <li class="active"><a href="http://127.0.0.1:8000/k1/login/">Login</a></li>
+                  </ul>
+                </div>
+        </nav>
+
+<div class="container">
+    <div style="text-align: center; margin-top: 1cm;">
+  <h2>Comments Section</h2>
+  <p>This is where fans can express their opinions:</p></div>            
+  <table class="table table-bordered" style="margin-top: 15%;">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Comment</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        {%for a in comments%}
+    <tr>
+      <td>{{a.name}}</td>
+    <td>{{a.comment}}</td>
+       <td><a href="{%url 'todoedit' a.id%}">
+				   <button style="color: #74f95c;background-color: #e64891;width: 58px;height: 34px;border-bottom-color: #214a3c;">Edit</button>
+
+				 </a>
+
+				 <a href="{%url 'tododelete' a.id%} ">
+				 <button style="color: #FFFFFF;background-color: #FF0000;width: 58px;height: 34px;border-bottom-color: #214a3c;">Delete</button>
+				 </a>
+       </td>
+    </tr>
+    {%endfor%}
+
+     
+    </tbody>
+  </table>
+  <div style="text-align: center;margin-top: 1cm;">To express your opinions <a href="#">Click here</a>.</div>
+</div>
+
+</body>
+</html>
+{%endblock%}
